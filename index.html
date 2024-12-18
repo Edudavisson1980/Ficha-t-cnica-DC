@@ -6,9 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <section class="musicians-card" style="background-image: url('Azul.jpg'); background-size: cover; background-position: center; padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 15px;">
+    <section class="musicians-card" style="background-image: url('Azul.jpg'); background-size: cover; background-position: center; padding: 20px; display: flex; flex-wrap: nowrap; justify-content: center; align-items: center; gap: 15px;">
         <h2 style="text-align: center; font-family: 'Rock Salt', cursive; color: white; margin-bottom: 20px;">Ficha Técnica</h2>
-        <div class="musician zoomable" style="background-color: rgba(44, 71, 221, 0.8); border-radius: 10px; padding: 10px; width: 40%; box-shadow: 0 0 10px rgba(238, 228, 228, 0.5); text-align: center; font-family: 'Rock Salt', cursive; transition: transform 0.3s ease-in-out;">
+        <div class="musician zoomable" style="background-color: rgba(44, 71, 221, 0.8); border-radius: 10px; padding: 10px; width: 45%; box-shadow: 0 0 10px rgba(238, 228, 228, 0.5); text-align: center; font-family: 'Rock Salt', cursive; transition: transform 0.3s ease-in-out;">
             <img src="Foto_3.jpg" alt="Foto de Samuel Belo" style="width: 70%; border-radius: 10px; margin-bottom: 10px;">
             <h3>Samuel Belo</h3>
             <p><strong>Função:</strong> Vocal/Violão/Piano</p>
@@ -19,7 +19,7 @@
             <p><strong>Frase:</strong> "A música é a voz da alma."</p>
         </div>
     
-        <div class="musician zoomable" style="background-color: rgba(44, 71, 221, 0.8); border-radius: 10px; padding: 10px; width: 40%; box-shadow: 0 0 10px rgba(238, 228, 228, 0.5); text-align: center; font-family: 'Rock Salt', cursive; transition: transform 0.3s ease-in-out;">
+        <div class="musician zoomable" style="background-color: rgba(44, 71, 221, 0.8); border-radius: 10px; padding: 10px; width: 45%; box-shadow: 0 0 10px rgba(238, 228, 228, 0.5); text-align: center; font-family: 'Rock Salt', cursive; transition: transform 0.3s ease-in-out;">
             <img src="Foto_3.jpg" alt="Foto de Edu Davisson" style="width: 70%; border-radius: 10px; margin-bottom: 10px;">
             <h3>Edu Davisson</h3>
             <p><strong>Função:</strong> Guitarra/Violão/Backing Vocal</p>
@@ -32,19 +32,30 @@
     </section>
     
     <style>
-        /* Configuração responsiva para celular */
+        .musicians-card {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+        }
+    
         @media (max-width: 768px) {
             .musicians-card {
                 flex-wrap: nowrap;
-                justify-content: center;
+                overflow-x: auto;
+                justify-content: flex-start;
+                gap: 15px;
             }
+    
             .musician {
-                width: 45%;
-                margin: 0 5px;
-                padding: 5px;
+                flex: 0 0 auto;
+                width: 80%;
+                margin-right: 10px;
             }
+    
             .musician img {
-                width: 50%;
+                width: 60%;
             }
         }
     
@@ -74,7 +85,7 @@
             });
         });
     </script>
-
+    
 </body>
 </html>
 
