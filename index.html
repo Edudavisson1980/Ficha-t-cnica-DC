@@ -77,11 +77,12 @@
     </style>
 </head>
 <body>
-    <section class="musicians-card">
+    
+    <section class="musicians-card" style="background-image: url('Azul.jpg'); background-size: cover; background-position: center; padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 20px; box-sizing: border-box;">
         <h2 style="text-align: center; font-family: 'Rock Salt', cursive; color: white;">Ficha Técnica</h2>
-        <div class="musicians-row">
-            <div class="musician zoomable">
-                <img src="Foto_3.jpg" alt="Foto de Samuel Belo">
+        <div class="musicians-row" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 15px; width: 100%; max-width: 100%;">
+            <div class="musician zoomable" style="background-color: rgba(44, 71, 221, 0.8); border-radius: 10px; padding: 10px; flex: 1 1 calc(50% - 15px); box-shadow: 0 0 10px rgba(238, 228, 228, 0.5); text-align: center; font-family: 'Rock Salt', cursive; transition: transform 0.3s ease-in-out; max-width: 100%; box-sizing: border-box;">
+                <img src="Foto_3.jpg" alt="Foto de Samuel Belo" style="width: 70%; border-radius: 10px; margin-bottom: 10px;">
                 <h3>Samuel Belo</h3>
                 <p><strong>Função:</strong> Vocal/Violão/Piano</p>
                 <p><strong>Idade:</strong> 34</p>
@@ -90,9 +91,9 @@
                 <p><strong>Bandas por quais passou:</strong> Band-A, Rock Acoustic</p>
                 <p><strong>Frase:</strong> "A música é a voz da alma."</p>
             </div>
-
-            <div class="musician zoomable">
-                <img src="Foto_3.jpg" alt="Foto de Edu Davisson">
+    
+            <div class="musician zoomable" style="background-color: rgba(44, 71, 221, 0.8); border-radius: 10px; padding: 10px; flex: 1 1 calc(50% - 15px); box-shadow: 0 0 10px rgba(238, 228, 228, 0.5); text-align: center; font-family: 'Rock Salt', cursive; transition: transform 0.3s ease-in-out; max-width: 100%; box-sizing: border-box;">
+                <img src="Foto_3.jpg" alt="Foto de Edu Davisson" style="width: 70%; border-radius: 10px; margin-bottom: 10px;">
                 <h3>Edu Davisson</h3>
                 <p><strong>Função:</strong> Guitarra/Violão/Backing Vocal</p>
                 <p><strong>Idade:</strong> 44</p>
@@ -103,14 +104,48 @@
             </div>
         </div>
     </section>
-
+    
+    <style>
+        .musicians-card {
+            padding: 20px;
+        }
+    
+        .musicians-row {
+            gap: 15px;
+        }
+    
+        .musician {
+            text-align: center;
+        }
+    
+        .zoomable {
+            cursor: pointer;
+        }
+    
+        .zoomable.zoomed {
+            transform: scale(1.2);
+            z-index: 1000;
+        }
+    
+        @media (max-width: 768px) {
+            .musicians-row {
+                flex-direction: column;
+                align-items: center;
+            }
+    
+            .musician {
+                flex: 1 1 100%;
+                max-width: 90%;
+            }
+        }
+    </style>
+    
     <script>
-        // Maximizar e minimizar os cards
         document.querySelectorAll('.zoomable').forEach(card => {
             card.addEventListener('click', () => {
                 card.classList.toggle('zoomed');
             });
-
+    
             document.addEventListener('click', event => {
                 if (!event.target.closest('.zoomable')) {
                     document.querySelectorAll('.zoomed').forEach(zoomedCard => {
