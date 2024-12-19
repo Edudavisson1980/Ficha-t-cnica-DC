@@ -6,10 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <section class="musicians-card" style="background-image: url('Azul.jpg'); background-size: cover; background-position: center; padding: 20px; display: flex; flex-wrap: nowrap; justify-content: center; align-items: center; gap: 15px;">
-        
-        <div class="musician zoomable" style="background-color: rgba(44, 71, 221, 0.8); border-radius: 10px; padding: 10px; width: 45%; box-shadow: 0 0 10px rgba(238, 228, 228, 0.5); text-align: center; font-family: 'Rock Salt', cursive; transition: transform 0.3s ease-in-out;">
-            <img src="Foto_3.jpg" alt="Foto de Samuel Belo" style="width: 70%; border-radius: 10px; margin-bottom: 10px;">
+    
+    <section class="musicians-card" style="background-image: url('Azul.jpg'); background-size: cover; background-position: center; padding: 40px; display: flex; justify-content: space-around; align-items: flex-start; gap: 20px; flex-wrap: nowrap;">
+        <div class="musician zoomable" style="background-color: rgba(44, 71, 221, 0.8); border-radius: 10px; padding: 20px; width: 45%; box-shadow: 0 0 10px rgba(238, 228, 228, 0.5); text-align: center; font-family: 'Rock Salt', cursive; transition: transform 0.3s ease-in-out;">
+            <img src="Foto_3.jpg" alt="Foto de Samuel Belo" style="width: 30%; border-radius: 10px; margin-bottom: 15px;">
             <h3>Samuel Belo</h3>
             <p><strong>Função:</strong> Vocal/Violão/Piano</p>
             <p><strong>Idade:</strong> 34</p>
@@ -19,8 +19,8 @@
             <p><strong>Frase:</strong> "A música é a voz da alma."</p>
         </div>
     
-        <div class="musician zoomable" style="background-color: rgba(44, 71, 221, 0.8); border-radius: 10px; padding: 10px; width: 45%; box-shadow: 0 0 10px rgba(238, 228, 228, 0.5); text-align: center; font-family: 'Rock Salt', cursive; transition: transform 0.3s ease-in-out;">
-            <img src="Foto_3.jpg" alt="Foto de Edu Davisson" style="width: 70%; border-radius: 10px; margin-bottom: 10px;">
+        <div class="musician zoomable" style="background-color: rgba(44, 71, 221, 0.8); border-radius: 10px; padding: 20px; width: 45%; box-shadow: 0 0 10px rgba(238, 228, 228, 0.5); text-align: center; font-family: 'Rock Salt', cursive; transition: transform 0.3s ease-in-out;">
+            <img src="Foto_3.jpg" alt="Foto de Edu Davisson" style="width: 30%; border-radius: 10px; margin-bottom: 15px;">
             <h3>Edu Davisson</h3>
             <p><strong>Função:</strong> Guitarra/Violão/Backing Vocal</p>
             <p><strong>Idade:</strong> 44</p>
@@ -32,34 +32,18 @@
     </section>
     
     <style>
-        .musicians-card {
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 20px;
-        }
-    
+        /* Responsividade mantendo lado a lado horizontalmente */
         @media (max-width: 768px) {
             .musicians-card {
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                justify-content: flex-start;
-                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
-    
             .musician {
-                
-                width: 70%;
-                margin-right: 10px;
-                margin-left: 10px:
-            }
-    
-            .musician img {
-                width: 60%;
+                width: 90%;
             }
         }
     
+        /* Estilo do zoom */
         .zoomable {
             cursor: pointer;
         }
@@ -71,10 +55,10 @@
     </style>
     
     <script>
-        // Maximizar e minimizar os cards
+        // Adicionar e remover zoom
         document.querySelectorAll('.zoomable').forEach(card => {
             card.addEventListener('click', () => {
-                card.classList.toggle('zoomed');
+                card.classList.add('zoomed');
             });
     
             document.addEventListener('click', event => {
@@ -86,7 +70,6 @@
             });
         });
     </script>
-        
 </body>
 </html>
 
